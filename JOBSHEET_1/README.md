@@ -3,118 +3,17 @@
 Penggunaan kelas dan objek adalah inti dari pemrograman berorientasi objek
 (OOP). Dalam PHP, kelas digunakan untuk mendefinisikan struktur dan perilaku objek, sedangkan objek adalah instansiasi dari kelas tersebut. Dengan memanfaatkan kelas dan objek, kode dapat diorganisir dengan lebih baik, lebih mudah dipelihara, dan dapat digunakan kembali.
 
-## Class and Object
-
+## Class 
+Class adalah template atau blueprint untuk membuat objek. Kelas mendefinisikan atribut dan metode yang dimiliki oleh objek
 ```php
 <?php
 // definisi kelas 
 class Mahasiswa {
-    // attribute atau properti 
-    public $nama;
-    public $nim;
-    public $jurusan;
-
-    // metode atau function 
-    public function tampilkanData() {
-        return "Nama : $this->nama <br>Nim : $this->nim <br>Jurusan : $this->jurusan</br    >";
-    }
-}
-
-// instansi objek 
-$mhs = new Mahasiswa("Muhammad Bondan Raharidnata", "230202018", ">Komputer dan Bisnis");
-echo $mhs->tampilkanData();
-
-?>
 ```
-![output](assets/1.png)
 ## Constructor
+Konstruktor adalah metode khusus yang dipanggil secara otomatis saat objek dibuat. Konstruktor digunakan untuk menginisialisasi objek dengan nilai awal
 ```php
 <?php
-// definisi kelas 
-class Mahasiswa {
-    // attribute atau properti 
-    public $nama;
-    public $nim;
-    public $jurusan;
-
-    // metode atau function 
-    public function tampilkanData() {
-        return "Nama : $this->nama <br>Nim : $this->nim <br>Jurusan : $this->jurusan";
-    }
-
-    // constructor
-    public function __construct($nama, $nim, $jurusan) {
-    $this->nama = $nama;
-    $this->nim = $nim;
-    $this->jurusan = $jurusan;
-    }
-}
-
-// instansi objek 
-$mhs = new Mahasiswa("Muhammad Bondan Raharidnata", "230202018", "Komputer dan Bisnis");
-echo $mhs->tampilkanData();
-
-?>
-```
-![output](assets/2.png)
-
-## Metode Tambahan
-
-```php
-<?php
-// definisi kelas 
-class Mahasiswa {
-    // attribute atau properti 
-    public $nama;
-    public $nim;
-    public $jurusan;
-
-    // metode atau function 
-    public function tampilkanData() {
-        return "Nama : $this->nama <br>Nim : $this->nim <br>Jurusan : $this->jurusan</br>";
-    }
-
-    public function updateJurusan($jurusan) {
-        $this->jurusan = $jurusan;
-    }
-
-    // constructor
-    public function __construct($nama, $nim, $jurusan) {
-    $this->nama = $nama;
-    $this->nim = $nim;
-    $this->jurusan = $jurusan;
-    }
-}
-
-// instansi objek 
-$mhs = new Mahasiswa("Muhammad Bondan Raharidnata", "230202018", "Komputer dan Bisnis");
-echo $mhs->tampilkanData();
-$mhs->updateJurusan("Bisnis dan Komputer");
-echo $mhs->tampilkanData();
-
-?>
-```
-![output](assets/3.png)
-
-## Penggunaan Attribute dan Metode
-```php
-<?php
-// definisi kelas 
-class Mahasiswa {
-    // attribute atau properti 
-    public $nama;
-    public $nim;
-    public $jurusan;
-
-    // metode atau function 
-    public function tampilkanData() {
-        return "Nama : $this->nama <br>Nim : $this->nim <br>Jurusan : $this->jurusan</br>";
-    }
-
-    public function updateJurusan($jurusan) {
-        $this->jurusan = $jurusan;
-    }
-
     // constructor
     public function __construct($nama, $nim, $jurusan) {
     $this->nama = $nama;
@@ -122,23 +21,34 @@ class Mahasiswa {
     $this->jurusan = $jurusan;
     }
 
-    // metode atau function setter untuk properti atau attribute nim
-    public function setNim($nim) {
-        $this->nim = $nim;
-    }
-}
-
-// instansi objek 
-$mhs = new Mahasiswa("Muhammad Bondan Raharidnata", "230202018", "Komputer dan Bisnis");
-echo $mhs->tampilkanData();
-$mhs->updateJurusan("BISNIS dan KOMPUTER");
-echo $mhs->tampilkanData();
-$mhs->setNIm("999999999");
-echo $mhs->tampilkanData(); 
-?>
 ```
-![output](assets/4.png)
 
+## Metode tampilkan data
+Metode tampilkanData digunakan untuk mengakses dan menampilkan data dari atribut atau properti objek. Ini adalah cara untuk memperlihatkan informasi yang terkandung dalam objek kepada pengguna atau untuk debugging
+
+```php
+<?php
+    // metode atau function 
+    public function tampilkanData() {
+        return "Nama : $this->nama <br>Nim : $this->nim 
+```
+
+## Penggunaan Attribute
+Atribut adalah variabel yang dimiliki oleh kelas. Atribut ini menggambarkan keadaan atau karakteristik objek
+```php
+<?php
+    // attribute atau properti 
+    public $nama;
+    public $nim;
+    public $jurusan;
+```
+## Instansiasi objek
+Untuk membuat objek baru dari kelas,menggunakan operator new diikuti dengan nama kelas dan, argumen untuk konstrukto
+```php
+// instansiasi objek
+$dosen = new Dosen("Pak Abda'u", "32436554", "Praktikuk WEB-2");
+echo $dosen->tampilkanDosen();
+```
 ## Tugas Mandiri 2
 ```php
 <?php
@@ -167,4 +77,3 @@ $dosen = new Dosen("Pak Abda'u", "32436554", "Praktikuk WEB-2");
 echo $dosen->tampilkanDosen();
 ?>
 ```
-![output](assets/5.png)
